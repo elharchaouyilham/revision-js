@@ -22,7 +22,11 @@ class Produit{
      $this->nom=$nom;
      }
     public function setPrix($prix){
-       $this->prix=$prix;  
+        if($prix>0){
+       $this->prix=$prix; 
+       }else{
+        echo "le prix ne doit pas etre negatif";
+       } 
     }
     public function setSock($stock){ 
         if($stock>0){
@@ -39,6 +43,14 @@ class Produit{
 }
 $produit1=new Produit("produit1",30,67);
 $produit2=new Produit("produit2",23,45);
+$produit1->afficher();
+$produit2->afficher();
+
+$Produit1->setPrix(-5);
+echo "le nom est".$produit1->getNom();
+echo "le prix est".$produit2->getPrix();
+
+
 
 
 // créez produit.php et déclarez la classe Produit avec les 3 attributs private : $nom, $prix,
