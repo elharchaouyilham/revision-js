@@ -46,9 +46,12 @@ class CompteBancaire {
         }
     }
     public function affichicherinfos(){
-        
+        echo "le titulaire est ".$this->titulaire."et son iban est".$this->iban."et son solde est".$this->solde;
     }
 }
+$CompteBancaire1=new CompteBancaire("titulaire1",1234566,45678);
+$CompteBancaire2=new CompteBancaire("titulaire2",12345646,678);
+
 // 13. Ajoutez la méthode deposer($montant) : valider que $montant > 0, puis ajouter au solde 
 // 14. Ajoutez la méthode retirer($montant) : valider que $montant > 0 ET que le solde est 
 // suffisant, sinon afficher "Solde insuffisant" 
