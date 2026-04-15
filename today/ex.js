@@ -43,10 +43,10 @@ let obj=flotte.reduce((acc ,element)=>{
 acc[element.cat].nbTotal++;
 acc[element.cat].note+=element.noteMoyen;
 acc[element.cat].prix_jour+=element.prixMoyen;
-if(element.disponible){
-    let nbDisponibles=true;
-  acc[element.cat]=nbDisponibles
-  ;
-}
+ if (element.disponible) {
+    acc[element.cat].nbDisponibles++;
+  }
+
+  return acc;
 }, {});
 console.log(obj);
